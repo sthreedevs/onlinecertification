@@ -7,6 +7,8 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import AboutUs from "./pages/AboutUs";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import SickLeaveCertificatePage from "./pages/ServicePages/SickLeaveCertificatePage";
+import FitnessCertificatePage from "./pages/ServicePages/FitnessCertificatePage";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -25,6 +27,8 @@ const App = () => {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-conditions" element={<TermsAndConditions />} />
+        <Route path="/services/sick-leave-certificate" element={<SickLeaveCertificatePage />} />
+        <Route path="/services/fitness-certificate" element={<FitnessCertificatePage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

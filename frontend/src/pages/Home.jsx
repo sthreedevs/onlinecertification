@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Steps from "../components/Steps";
 
 const HeroSection = () => (
   <section className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-indigo-200 via-purple-200 to-pink-200 px-6 md:px-20 text-center">
@@ -121,50 +122,30 @@ const Testimonials = () => (
   </section>
 );
 
-const Steps = () => (
-  <section className="py-20 px-6 md:px-20 bg-white">
-    <div className="max-w-5xl mx-auto text-center">
-      <h2 className="text-4xl font-bold text-gray-900 mb-16">How It Works</h2>
-      <div className="relative flex flex-col md:flex-row md:items-center md:justify-between gap-10">
-        {[
-          {
-            step: "1",
-            title: "Fill Form",
-            desc: "Provide your details and health concern.",
-          },
-          {
-            step: "2",
-            title: "Consult Doctor",
-            desc: "Online consultation with our experts.",
-          },
-          {
-            step: "3",
-            title: "Receive Certificate",
-            desc: "Get certified instantly via email.",
-          },
-        ].map((item, idx) => (
-          <motion.div
-            key={idx}
-            whileHover={{ y: -10 }}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: idx * 0.3 }}
-            viewport={{ once: true }}
-            className="relative bg-indigo-50 p-8 rounded-2xl shadow-lg w-full text-center md:w-1/3"
-          >
-            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 flex items-center justify-center bg-indigo-600 text-white text-2xl font-bold rounded-full shadow-md">
-              {item.step}
-            </div>
-            <h4 className="mt-10 text-xl font-bold text-gray-800">
-              {item.title}
-            </h4>
-            <p className="mt-4 text-gray-600">{item.desc}</p>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+const StepsSection = () => {
+  const steps = [
+    {
+      step: "1",
+      title: "Fill Form",
+      desc: "Provide your details and health concern.",
+    },
+    {
+      step: "2",
+      title: "Consult Doctor",
+      desc: "Online consultation with our experts.",
+    },
+    {
+      step: "3",
+      title: "Receive Certificate",
+      desc: "Get certified instantly via email.",
+    },
+  ];
+  return (
+    <section className="py-20 px-6 md:px-20 bg-white">
+      <Steps title="How It Works" steps={steps} />
+    </section>
+  );
+};
 
 // FAQ Section
 const FAQ = () => (
@@ -207,7 +188,7 @@ const Home = () => (
     <HeroSection />
     <WhyChooseUs />
     <Services />
-    <Steps />
+    <StepsSection />
     <Testimonials />
     <FAQ />
   </div>

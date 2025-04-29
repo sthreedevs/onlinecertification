@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import HeroLeftRight from "../components/common/HeroLeftRight";
+import HeroLeftRight from "../components/herosection/HeroLeftRight";
 
 const steps = [
   {
